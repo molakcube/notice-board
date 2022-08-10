@@ -14,12 +14,12 @@
     <main>
         <div class="container">
             <form class="write">
-                <div class="information">
-                    <input type="text" name="id" placeholder="ID">
-                    <input type="password" name="password" placeholder="PASSWORD">
+                <div class="informationZone">
+                    <input type="text" class="id" name="id" placeholder="ID" required>
+                    <input type="password" class="pw" name="password" placeholder="PASSWORD" required>
                 </div>
-                <div class="title">
-                    <input type="text" name="title" placeholder="TITLE">
+                <div class="titlezone">
+                    <input type="text" class="title" name="title" placeholder="TITLE">
                 </div>
                 <div class="content">
                     <textarea  class="article" cols="100" rows="30"></textarea>
@@ -27,9 +27,7 @@
                 <button>등록</button>
             </form>
         </div>
-        <div class="show">
-            <p class="show_content"></p>
-        </div>
+        <div class="show"></div>
     </main>
     <footer></footer>
     <script src="src/write.js"></script>
