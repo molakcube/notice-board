@@ -1,24 +1,33 @@
 const enroll = document.querySelector("button");
 
-function showcontent (event) {
+let informaton = [];
+
+function savecontent (event) {
     event.preventDefault();
     const contentBox = document.querySelector(".article");
     const id = document.querySelector(".id"); 
     const title = document.querySelector(".title");
+    const pw = document.querySelector(".pw");
 
-    const  articleZone = document.createElement("div");
-    const titleZone = document.createElement("h2");
-    const idZone = document.createElement("span");
+    const userId = id.value;
+    const userPw = pw.value;
+    const userTitle = title.value;
+    const userContent = contentBox.value;
 
-    titleZone.innerText = title.value;
-    idZone.innerText = `작성자: ${id.value}`;
-    articleZone.innerText = contentBox.value; 
-
-    const showContent = document.querySelector(".show");
-
-    showContent.appendChild(titleZone);
-    showContent.appendChild(idZone);
-    showContent.appendChild(articleZone);
+    informObj = {
+        id: userId,
+        pw: userPw,
+        title: userTitle,
+        content: userContent
+    }
+    
+    informaton.push(informObj);
+    saveInform();
+    alert("등록되었습니다");
 }
 
-enroll.addEventListener("click", showcontent);
+function saveInform() {
+    localStorage.setItem("article", JSON.stringify(informaton));
+}
+
+enroll.addEventListener("click", savecontent);
