@@ -18,7 +18,8 @@ function savecontent (event) {
         id: userId,
         pw: userPw,
         title: userTitle,
-        content: userContent
+        content: userContent,
+        date: Date().toLocaleString()
     }
     
     informaton.push(informObj);
