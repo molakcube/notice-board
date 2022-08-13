@@ -12,10 +12,13 @@ function showContent (informs) {
     //글 불러오기 매커니즘
     const delButton = document.createElement("button");
     //글 삭제 버튼
+    const reviseButton = document.createElement("button");
+    //글 수정 버튼 
     idZone.innerText = `작성자: ${informs.id}`;
     titleZone.innerText = informs.title;
     articleZone.innerText = informs.content;
     delButton.innerText = "삭제";
+    reviseButton.innerText = "수정";
 
     delButton.addEventListener("click", delArticle);
 
@@ -23,6 +26,9 @@ function showContent (informs) {
     show.appendChild(idZone);
     show.appendChild(articleZone);
     show.appendChild(delButton);
+    show.appendChild(reviseButton);
+
+    reviseButton.addEventListener("click",reviseArticle);
 }
 
 function delArticle() {
@@ -36,6 +42,10 @@ function delArticle() {
     }
 }
 
-
+function reviseArticle() {
+    if(confirm("글을 수정하시겠습니까?")){
+        location.href="revise.html";
+    }
+}
 
 parsedInform.forEach(showContent);
