@@ -24,7 +24,7 @@ function revise(event) {
             if (change.id == targetArticle.id) {
                 change.title = targetArticle.title;
                 change.content = targetArticle.content;
-                change.date = Date().toLocaleString();
+                change.date = `수정시간: ${Date().toLocaleString()}`;
             }
         })
         localStorage.setItem("article", JSON.stringify(article));
