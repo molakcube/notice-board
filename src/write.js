@@ -1,6 +1,6 @@
 const enroll = document.querySelector("button");
 
-let informaton = [];
+informaton = [];
 
 function savecontent (event) {
     event.preventDefault();
@@ -32,3 +32,8 @@ function saveInform() {
 }
 
 enroll.addEventListener("click", savecontent);
+
+if(JSON.parse(localStorage.getItem("article")) !== null) {
+    informaton = (JSON.parse(localStorage.getItem("article")));
+    saveInform();
+}
