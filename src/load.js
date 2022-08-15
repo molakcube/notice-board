@@ -33,18 +33,15 @@ function showContent (informs) {
 
 function delArticle() {
     if (confirm("정말 글을 삭제하시겠습니까?")) {
-        const container = document.querySelector("body div"); 
-        const reviseInform = parsedContent.filter((title) => title.title !== container.id);
-        console.log(reviseInform);
-        localStorage.setItem("article", JSON.stringify(reviseInform));
-        localStorage.removeItem("show");
-        location.href="list.html";
+        localStorage.setItem("checkidtype","delete");
+        location.href="login.html";
     }
 }
 
 function reviseArticle() {
     if(confirm("글을 수정하시겠습니까?")){
-        location.href="revise.html";
+        localStorage.setItem("checkidtype","revise");
+        location.href="login.html";
     }
 }
 
