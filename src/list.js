@@ -1,6 +1,7 @@
 const inform = localStorage.getItem("article");
 const list = document.getElementById("list");
 const parsedInform = JSON.parse(inform);
+const writeButton = document.querySelector("footer button");
 
 function showPage(event) {
     const target = event.target.parentElement.parentElement;
@@ -33,4 +34,5 @@ function showContent (informs) {
     loadLink.addEventListener("click", showPage);
 }
 
+writeButton.addEventListener("click", () => location.href="write.html");
 parsedInform.forEach(showContent);
