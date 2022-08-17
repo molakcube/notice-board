@@ -19,7 +19,9 @@ function savecontent (event) {
         pw: userPw,
         title: userTitle,
         content: userContent,
-        date: Date().toLocaleString()
+        date: Date().toLocaleString(),
+        comment:"",
+        commentNo:0
     }
     
     informaton.push(informObj);
