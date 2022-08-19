@@ -1,4 +1,4 @@
-const enroll = document.querySelector("button");
+const form = document.getElementById("write");
 
 informaton = [];
 
@@ -20,8 +20,7 @@ function savecontent (event) {
         title: userTitle,
         content: userContent,
         date: Date().toLocaleString(),
-        comment:"",
-        commentNo:0
+        comment:[],
     }
     
     informaton.push(informObj);
@@ -33,7 +32,7 @@ function saveInform() {
     localStorage.setItem("article", JSON.stringify(informaton));
 }
 
-enroll.addEventListener("click", savecontent);
+form.addEventListener("submit", savecontent);
 
 if(JSON.parse(localStorage.getItem("article")) !== null) {
     informaton = (JSON.parse(localStorage.getItem("article")));
