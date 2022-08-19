@@ -1,4 +1,4 @@
-const button = document.getElementById("comment_button");
+const commentFrom = document.getElementById("comment");
 const commentArea = document.getElementById("comment_zone");
 const listArea = document.getElementById("comment_list");
 
@@ -14,14 +14,15 @@ function submmitComment(event) {
 
     inForm.map((change) => {
         if (change.title == showInform[0].title) {
-            change.comment = commentArea.value;
-            change.commentNo = change.commentNo + 1;
-            console.log(change);
+            change.comment.push(commentArea.value);
+            showInform[0].comment.push(commentArea.value);
+            localStorage.setItem("article", JSON.stringify(inForm));
+            localStorage.setItem("show", JSON.stringify(showInform));
+            console.log(inForm);
         }
     })
-    localStorage.setItem("article", JSON.stringify(inForm));
     li.appendChild(span);
     listArea.appendChild(li);
 }
 
-button.addEventListener("click", submmitComment);
+commentFrom.addEventListener("submit", submmitComment);
