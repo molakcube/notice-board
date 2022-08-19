@@ -15,6 +15,7 @@ function showContent (informs) {
     const titleZone = document.createElement("h2");
     const idZone = document.createElement("span");
     const dateZone = document.createElement("span");
+    const commentNo = document.createElement("span");
 
     const loadLink = document.createElement("a");
     loadLink.setAttribute("href","noticeboard.html");
@@ -22,11 +23,13 @@ function showContent (informs) {
     idZone.innerText = `작성자: ${informs.id}`;
     titleZone.innerText = informs.title;
     dateZone.innerText = informs.date;
-
+    if(informs.comment.length !== 0) {
+    commentNo.innerText = ` [${informs.comment.length}]`;
+    }
 
     loadLink.appendChild(titleZone);
     articleBox.appendChild(loadLink);
-
+    titleZone.appendChild(commentNo);
     articleBox.appendChild(idZone);
     articleBox.appendChild(dateZone);
     list.appendChild(articleBox);
