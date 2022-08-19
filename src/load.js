@@ -17,6 +17,7 @@ function showContent (informs) {
     idZone.innerText = `작성자: ${informs.id}`;
     titleZone.innerText = informs.title;
     articleZone.innerText = informs.content;
+
     delButton.innerText = "삭제";
     reviseButton.innerText = "수정";
 
@@ -29,6 +30,19 @@ function showContent (informs) {
     show.appendChild(reviseButton);
 
     reviseButton.addEventListener("click",reviseArticle);
+    parsedInform[0].comment.forEach(loadComment);
+    console.log(parsedInform[0].comment);
+}
+
+function loadComment(comments) {
+    const commentList = document.getElementById("comment_list");
+    const li = document.createElement("li");
+    const span = document.createElement("span");
+
+    span.innerText = comments;
+
+    li.appendChild(span);
+    commentList.appendChild(li);
 }
 
 function delArticle() {
