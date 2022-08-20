@@ -1,41 +1,41 @@
-const inform = localStorage.getItem("article");
+const articles = localStorage.getItem("article");
 const list = document.getElementById("list");
-const parsedInform = JSON.parse(inform);
+const parsedArticles = JSON.parse(articles);
 const writeButton = document.querySelector("footer button");
 
 function showPage(event) {
     const target = event.target.parentElement.parentElement;
-    const show = parsedInform.filter((showP) => showP.title == target.id);
-    localStorage.setItem("show", JSON.stringify(show));
+    const filter = parsedArticles.filter((showP) => showP.title == target.id);
+    localStorage.setItem("show", JSON.stringify(filter));
 };
 
-function showContent (informs) {
-    const articleBox = document.createElement("div");
-    articleBox.id = informs.title;
+function show (article) {
+    const articleZone = document.createElement("div");
+    articleZone.id = article.title;
     const titleZone = document.createElement("h2");
     const idZone = document.createElement("span");
     const dateZone = document.createElement("span");
     const commentNo = document.createElement("span");
 
     const loadLink = document.createElement("a");
-    loadLink.setAttribute("href","noticeboard.html");
+    loadLink.setAttribute("href","load.html");
 
-    idZone.innerText = `작성자: ${informs.id}`;
-    titleZone.innerText = informs.title;
-    dateZone.innerText = informs.date;
-    if(informs.comment.length !== 0) {
-    commentNo.innerText = ` [${informs.comment.length}]`;
+    loadLink.innerText = article.title;
+    if(article.comment.length !== 0) {
+    commentNo.innerText = ` [${article.comment.length}]`;
     }
+    idZone.innerText = `작성자: ${article.id}`;
+    dateZone.innerText = article.date;
 
-    loadLink.appendChild(titleZone);
-    articleBox.appendChild(loadLink);
+    titleZone.appendChild(loadLink);
     titleZone.appendChild(commentNo);
-    articleBox.appendChild(idZone);
-    articleBox.appendChild(dateZone);
-    list.appendChild(articleBox);
+    articleZone.appendChild(titleZone);
+    articleZone.appendChild(idZone);
+    articleZone.appendChild(dateZone);
+    list.appendChild(articleZone);
 
-    loadLink.addEventListener("click", showPage);
+    titleZone.addEventListener("click", showPage);
 }
 
 writeButton.addEventListener("click", () => location.href="write.html");
-parsedInform.forEach(showContent);
+parsedArticles.forEach(show);

@@ -2,12 +2,12 @@ const article = JSON.parse(localStorage.getItem("article"));
 const show = JSON.parse(localStorage.getItem("show"));
 const targetArticle = show[0];
 
-const id = document.querySelector(".id");
-const pw = document.querySelector(".pw");
-const title = document.querySelector(".title");
-const content = document.querySelector(".content");
+const id = document.getElementById("id");
+const pw = document.getElementById("pw");
+const title = document.getElementById("title");
+const content = document.getElementById("content");
 
-const button = document.querySelector("button");
+const form = document.getElementById("revise_form");
 
 id.value = targetArticle.id;
 pw.value = targetArticle.pw;
@@ -33,4 +33,4 @@ function revise(event) {
     }
 }
 
-button.addEventListener("click", revise);
+form.addEventListener("submit", revise);

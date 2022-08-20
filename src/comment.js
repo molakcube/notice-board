@@ -1,13 +1,12 @@
-const commentFrom = document.getElementById("comment");
-const commentArea = document.getElementById("comment_zone");
+const commentFrom = document.getElementById("comment_zone");
+const commentArea = document.getElementById("comment");
 const listArea = document.getElementById("comment_list");
 
 const inForm = JSON.parse(localStorage.getItem("article"));
 const showInform = JSON.parse(localStorage.getItem("show"));
 
 
-function submmitComment(event) {
-    event.preventDefault();
+function submmitComment() {
     const li = document.createElement("li");
     const span = document.createElement("span");
     span.innerText = commentArea.value;
@@ -18,7 +17,6 @@ function submmitComment(event) {
             showInform[0].comment.push(commentArea.value);
             localStorage.setItem("article", JSON.stringify(inForm));
             localStorage.setItem("show", JSON.stringify(showInform));
-            console.log(inForm);
         }
     })
     li.appendChild(span);

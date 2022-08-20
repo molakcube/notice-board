@@ -1,27 +1,26 @@
-const inform = localStorage.getItem("show");
-const content = localStorage.getItem("article");
-const parsedInform = JSON.parse(inform);
-const parsedContent = JSON.parse(content);
-//가독성 위해 변수명 바꾸기
-function showContent (informs) {
+const show = localStorage.getItem("show");
+const articles = localStorage.getItem("article");
+const parsedShow = JSON.parse(show);
+const parsedArticles = JSON.parse(articles);
+
+function paint (article) {
     const articleZone = document.createElement("div");
     const titleZone = document.createElement("h2");
     const idZone = document.createElement("span");
-    const show = document.querySelector("#container");
-    show.id = informs.title;
-    //글 불러오기 매커니즘
+    const show = document.querySelector(".container");
+    show.id = article.title;
+
     const delButton = document.createElement("button");
-    //글 삭제 버튼
+    delButton.type = "button";
     const reviseButton = document.createElement("button");
-    //글 수정 버튼 
-    idZone.innerText = `작성자: ${informs.id}`;
-    titleZone.innerText = informs.title;
-    articleZone.innerText = informs.content;
+    reviseButton.type = "button";
+   
+    titleZone.innerText = article.title;
+    idZone.innerText = `작성자: ${article.id}`;
+    articleZone.innerText = article.content;
 
-    delButton.innerText = "삭제";
     reviseButton.innerText = "수정";
-
-    delButton.addEventListener("click", delArticle);
+    delButton.innerText = "삭제";
 
     show.appendChild(titleZone);
     show.appendChild(idZone);
@@ -29,9 +28,9 @@ function showContent (informs) {
     show.appendChild(delButton);
     show.appendChild(reviseButton);
 
+    delButton.addEventListener("click", delArticle);
     reviseButton.addEventListener("click",reviseArticle);
-    parsedInform[0].comment.forEach(loadComment);
-    console.log(parsedInform[0].comment);
+    parsedShow[0].comment.forEach(loadComment);
 }
 
 function loadComment(comments) {
@@ -59,4 +58,4 @@ function reviseArticle() {
     }
 }
 
-parsedInform.forEach(showContent);
+parsedShow.forEach(paint); // map으로 가능한지 체크

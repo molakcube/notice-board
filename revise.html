@@ -7,11 +7,17 @@
     <title>Revise page</title>
 </head>
 <body>
-    <form>
-        <input type="text" class="id" value="sd" readonly>
-        <input type="password" class="pw" readonly>
-        <input type="text" class="title" required>
-        <textarea class="content" required></textarea>
+    <form id="revise_form">
+        <div id="id_zone">
+            <input type="text" id="id" value="sd" readonly>
+            <input type="password" id="pw" readonly>
+        </div>
+        <div id="title_zone">
+            <input type="text" id="title" required>
+        </div>
+        <div id="article">
+            <textarea id="content" cols="100" rows="30" required></textarea>
+        </div>
         <button>수정</button>
     </form>
     <script src="src/revise.js"></script>
