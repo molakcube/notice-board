@@ -1,0 +1,14 @@
+button {
+    font-weight: 1000;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 0.6rem;
+    background-color: lightblue;
+    color: #ffff;
+    transition: background 0.2s;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: rgb(93, 120, 129);
+}
