@@ -1,0 +1,78 @@
+@import url("buttons.css");
+
+* {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+header {
+    position: fixed;
+    font-size:2rem;
+    margin: 1rem;
+    border-bottom: 0.1rem solid grey;
+}
+
+header:hover{
+    cursor: pointer;
+}
+
+#container {
+    height: 100vh;
+    margin: 0; padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#write {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#content {
+    width:40rem;
+    height: 30rem;
+    resize: none;
+}
+
+#id_zone {
+    display: flex;
+    justify-content: space-between;
+}
+
+#id_zone * {
+    width: 19rem;
+    border-collapse: collapse;
+}
+
+#write * {
+    margin-top: 0.4rem;
+    margin-bottom: 0.4rem;
+}
+
+#title {
+   width: 40rem;
+}
+
+#id, #pw, #title {
+    height: 2rem;
+}
+
+input, textarea {
+    border: 1px solid rgb(216, 216, 216);
+    padding-left:0.5rem;
+    border-radius: 0.6rem;
+    box-shadow: 1px 1px 1px 1px rgb(245, 245, 245);
+}
+
+#button {display: flex;}
+
+.empty {flex-grow: 1;}
