@@ -22,9 +22,14 @@ function revise(event) {
         
         article.map((change) => {
             if (change.id == targetArticle.id) {
+                const today = new Date();
+                const year = today.getFullYear();
+                const month = ("0" + (today.getMonth() + 1)).slice(-2);
+                const day = ("0" + today.getDate()).slice(-2);
+
                 change.title = targetArticle.title;
                 change.content = targetArticle.content;
-                change.date = `수정시간: ${Date().toLocaleString()}`;
+                change.date = `수정시간: ${year}-${month}-${day}`;
             }
         })
         localStorage.setItem("article", JSON.stringify(article));

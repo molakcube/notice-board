@@ -14,12 +14,17 @@ function save (e) {
     const userTitle = title.value;
     const userContent = content.value;
 
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = ("0" + (today.getMonth() + 1)).slice(-2);
+    const day = ("0" + today.getDate()).slice(-2);
+
     informObj = {
         id: userId,
         pw: userPw,
         title: userTitle,
         content: userContent,
-        date: Date().toLocaleString(), //이후에 다른 방식으로 날짜 삽입
+        date: `${year}-${month}-${day}`, 
         comment:[],
         //이후 조회수 기능 추가
     }
