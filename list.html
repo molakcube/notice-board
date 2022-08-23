@@ -4,15 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/list.css">
     <title>List</title>
 </head>
 <body>
-    <main id="list">
-        <h1>글 목록</h1>
-    </main>
-    <footer>
-        <button type="button">글 작성</button>
-    </footer>
+    <div id="container">
+        <header>
+            <div id="logo">
+            <a href="list.html">PEPE.COM</a>
+            </div>
+        </header>
+        <main>
+            <div id="article-list"></div>
+            <div id="button">
+                <div class="empty"></div>
+                <button type="button">Post</button>
+            </div>
+        </main>
+        <footer>
+            <div>
+                &#169; 2022. HEO JUN-HOE. All rights reserved.
+            </div>
+        </footer>
+    </div>
     <script src="src/list.js"></script>
 </body>
 </html>
