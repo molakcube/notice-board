@@ -11,9 +11,9 @@ function checkId (event) {
     event.preventDefault();
     const idValue = id.value;
     const pwValue = pw.value;
-    if ( idValue !== inform[0].id) {
+    if ( idValue !== show[0].id) {
         alert("아이디가 일치하지 않습니다.")
-    } else if(pwValue != inform[0].pw) {
+    } else if(pwValue != show[0].pw) {
         alert("비밀번호가 일치하지 않습니다.")     
     } else successLogin();
 }
