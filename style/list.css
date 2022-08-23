@@ -1,0 +1,47 @@
+@import url("module.css");
+@import url("dark.css");
+
+.article-box {
+    width: 50rem;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid rgb(216, 216, 216);
+    margin:0.2rem;
+}
+
+.article-box * {
+    padding: 0.2rem;
+}
+
+.article-box a {
+    font-size: 1.3rem;
+    font-weight: 900;
+    text-decoration: none;
+    color: black;
+}
+
+.inform-box {
+    display: flex;
+}
+
+.title-box {
+    display: flex;
+}
+
+.extra-box {
+    display: flex;
+}
+
+.extra-box div:nth-of-type(1) {
+    flex-grow: 1;
+} 
+/* 이후에 class나 id 추가해서 로직 변경 꼭 필요 */
+
+.extra-box div:nth-of-type(2) {
+    flex-grow: 0;
+}
+
+#button {
+    margin: 1rem;
+    width: 50rem;
+}
