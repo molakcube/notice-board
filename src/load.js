@@ -4,23 +4,30 @@ const parsedShow = JSON.parse(show);
 const parsedArticles = JSON.parse(articles);
 
 function paint (article) {
-    const articleZone = document.createElement("div");
-    const titleZone = document.createElement("h2");
-    const idZone = document.createElement("span");
-    const show = document.querySelector(".container");
-    show.id = article.title;
+    const show = document.querySelector("main");
+    const articleBox = document.createElement("div");
+    articleBox.className = "article-box";
+    articleBox.id = article.title;
+    const informBox = document.createElement("div");
+    informBox.className = "inform-box";
+    const title = document.createElement("div");
+    title.className = "title";
+    const post = document.createElement("div");
+    post.className = "post";
 
     const delButton = document.createElement("button");
     delButton.type = "button";
+    delButton.className = "del-button";
     const reviseButton = document.createElement("button");
     reviseButton.type = "button";
+    reviseButton.className = "revise-button";
    
     titleZone.innerText = article.title;
     idZone.innerText = `작성자: ${article.id}`;
     articleZone.innerText = article.content;
 
-    reviseButton.innerText = "수정";
-    delButton.innerText = "삭제";
+    reviseButton.innerText = "Revise";
+    delButton.innerText = "Delete";
 
     show.appendChild(titleZone);
     show.appendChild(idZone);

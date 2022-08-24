@@ -1,11 +1,6 @@
 @import url("module.css");
 @import url("dark.css");
 
-#write {
-    display: flex;
-    flex-direction: column;
-}
-
 #content {
     width:40rem;
     height: 30rem;
