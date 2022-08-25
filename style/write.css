@@ -12,10 +12,10 @@
     justify-content: space-between;
 }
 
-#id_zone * {
-    width: 19rem;
-    border-collapse: collapse;
-}
+    #id_zone * {
+        width: 19rem;
+        border-collapse: collapse;
+    }
 
 #write * {
     margin-top: 0.4rem;
@@ -28,15 +28,4 @@
 
 #id, #pw, #title {
     height: 2rem;
-}
-
-input, textarea {
-    border: 1px solid rgb(216, 216, 216);
-    padding-left:0.5rem;
-    border-radius: 0.6rem;
-    box-shadow: 1px 1px 1px 1px rgb(245, 245, 245);
-}
-
-textarea {
-    padding: 0.5rem;
 }

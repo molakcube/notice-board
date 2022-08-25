@@ -1,14 +1,56 @@
 @import url("module.css");
 @import url("dark.css");
 
-.article-box
+#article-box {
+    width: 50rem;
+    border-bottom: 1px solid rgb(216, 216, 216);
+}
+    #article-box > * { 
+        padding: 0.5rem;
+        margin: 0.2rem 0;
+    }
 
-.inform-box
+#title {
+    font-size: 2rem;
+    font-weight: 900;
+}
 
-.title
+#content {
+    font-size: 1.25rem;
+}
 
-.post
+.button {
+    margin: 0.2rem 0;
+    width: 50rem;
+}
+    .button * { margin-left:0.2rem; } 
 
-.del-button
+#comment-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem 0;
+}
 
-.revise-button {}
+#comment-zone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50rem;
+}
+
+#comment-form {
+    width: 50rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    #comment { 
+        resize: none;
+        width: 30rem;
+        height: 5rem; 
+    }
+
+        #comment:focus { outline: none; }
+
+#comment-list div:nth-of-type(1) { font-size: 1.5rem;}
