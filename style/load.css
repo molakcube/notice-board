@@ -41,10 +41,14 @@
 
 #comment-form {
     width: 50rem;
-    display: flex;
-    justify-content: center;
+    display: flex; 
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
 }
+
+#comment-form .button { width: 30rem;}
+
     #comment { 
         resize: none;
         width: 30rem;
@@ -52,5 +56,7 @@
     }
 
         #comment:focus { outline: none; }
+    
+    
 
 #comment-list div:nth-of-type(1) { font-size: 1.5rem;}
