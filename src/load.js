@@ -3,39 +3,22 @@ const articles = localStorage.getItem("article");
 const parsedShow = JSON.parse(show);
 const parsedArticles = JSON.parse(articles);
 
+const id = document.getElementById("id");
+const date = document.getElementById("date");
+const title = document.getElementById("title");
+const content = document.getElementById("content");
+const reviseButton = document.getElementById("revise-button");
+const deleteButton = document.getElementById("delete-button");
+
 function paint (article) {
-    const show = document.querySelector("main");
-    const articleBox = document.createElement("div");
-    articleBox.className = "article-box";
-    articleBox.id = article.title;
-    const informBox = document.createElement("div");
-    informBox.className = "inform-box";
-    const title = document.createElement("div");
-    title.className = "title";
-    const post = document.createElement("div");
-    post.className = "post";
-
-    const delButton = document.createElement("button");
-    delButton.type = "button";
-    delButton.className = "del-button";
-    const reviseButton = document.createElement("button");
-    reviseButton.type = "button";
-    reviseButton.className = "revise-button";
    
-    titleZone.innerText = article.title;
-    idZone.innerText = `작성자: ${article.id}`;
-    articleZone.innerText = article.content;
+    id.innerText = article.id;
+    date.innerText = article.date;
+    title.innerText = article.title;
+    content.innerText = article.content;
+    
 
-    reviseButton.innerText = "Revise";
-    delButton.innerText = "Delete";
-
-    show.appendChild(titleZone);
-    show.appendChild(idZone);
-    show.appendChild(articleZone);
-    show.appendChild(delButton);
-    show.appendChild(reviseButton);
-
-    delButton.addEventListener("click", delArticle);
+    deleteButton.addEventListener("click", delArticle);
     reviseButton.addEventListener("click",reviseArticle);
     parsedShow[0].comment.forEach(loadComment);
 }

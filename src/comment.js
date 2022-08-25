@@ -1,4 +1,4 @@
-const commentFrom = document.getElementById("comment_zone");
+const commentFrom = document.getElementById("comment-form");
 const commentArea = document.getElementById("comment");
 const listArea = document.getElementById("comment_list");
 

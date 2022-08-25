@@ -5,14 +5,14 @@ const writeButton = document.querySelector("#container button");
 
 function showPage(event) {
     const target = event.target.parentElement.parentElement.parentElement;
-    const filter = parsedArticles.filter((showP) => showP.title == target.id);
+    const filter = parsedArticles.filter((showP) => showP.id == target.id);
     localStorage.setItem("show", JSON.stringify(filter));
 };
 
 function show (article) {
     const articleBox = document.createElement("div");
     articleBox.className = "article-box"
-    articleBox.id = article.title;  
+    articleBox.id = article.id;  
     const informBox = document.createElement("div");
     informBox.className = "inform-box"  
     const titleBox = document.createElement("div");  
