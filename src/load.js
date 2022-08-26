@@ -24,14 +24,12 @@ function paint (article) {
 }
 
 function loadComment(comments) {
-    const commentList = document.getElementById("comment_list");
-    const li = document.createElement("li");
-    const span = document.createElement("span");
+    const commentList = document.getElementById("comments");
+    const commentBox = document.createElement("div");
+    commentBox.className = "comment-box";
+    commentBox.innerText = comments;
 
-    span.innerText = comments;
-
-    li.appendChild(span);
-    commentList.appendChild(li);
+    commentList.appendChild(commentBox);
 }
 
 function delArticle() {

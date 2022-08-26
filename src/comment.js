@@ -7,9 +7,10 @@ const showInform = JSON.parse(localStorage.getItem("show"));
 
 
 function submmitComment() {
-    const li = document.createElement("li");
-    const span = document.createElement("span");
-    span.innerText = commentArea.value;
+    const commentBox = document.createElement("div");
+    commentBox.className = "comment-box";
+    
+    commentBox.innerText = commentArea.value;
 
     inForm.map((change) => {
         if (change.title == showInform[0].title) {
@@ -19,8 +20,7 @@ function submmitComment() {
             localStorage.setItem("show", JSON.stringify(showInform));
         }
     })
-    li.appendChild(span);
-    listArea.appendChild(li);
+    listArea.appendChild(commentBox);
 }
 
 commentFrom.addEventListener("submit", submmitComment);
