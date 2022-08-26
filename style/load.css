@@ -2,7 +2,7 @@
 @import url("dark.css");
 
 #article-box {
-    width: 50rem;
+    width: 40rem;
     border-bottom: 1px solid rgb(216, 216, 216);
 }
     #article-box > * { 
@@ -20,10 +20,21 @@
 }
 
 .button {
-    margin: 0.2rem 0;
-    width: 50rem;
+    margin: 0.5rem 0;
+    width: 40rem;
 }
-    .button * { margin-left:0.2rem; } 
+    .button * { margin-left:0.2rem; }
+
+#revise-button {
+    background-color: white;
+    border: 1px solid lightblue;
+    color: lightblue;
+    transition: background 0.2s;
+}
+    #revise-button:hover {
+        background-color: rgb(235, 235, 235);
+        color:white;
+    }
 
 #comment-container {
     display: flex;
@@ -36,27 +47,34 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 50rem;
+    width: 40rem;
 }
 
 #comment-form {
-    width: 50rem;
+    width: 40rem;
     display: flex; 
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
 }
 
-#comment-form .button { width: 30rem;}
+    #comment-form .button { width: 30rem; }
 
-    #comment { 
-        resize: none;
-        width: 30rem;
-        height: 5rem; 
-    }
-
-        #comment:focus { outline: none; }
+#comment { 
+    resize: none;
+    width: 30rem;
+    height: 5rem; 
+}
+    #comment:focus { outline: none; }
     
-    
+#comment-list > div:nth-of-type(1) { 
+    font-size: 1.5rem;
+    font-weight: 800; 
+    margin: 0.5rem 0 2rem;
+}
 
-#comment-list div:nth-of-type(1) { font-size: 1.5rem;}
+.comment-box {
+    width:40rem;
+    padding: 2rem;
+    border-bottom: 1px solid rgb(216, 216, 216);
+}
